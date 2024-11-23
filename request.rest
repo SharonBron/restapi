@@ -60,7 +60,7 @@ PUT http://localhost:3000/api/comment/<COMMENT_ID>
 Content-Type: application/json
 
 {
-    "content": "Updated comment content"
+    "body": "Updated comment content"
 }
 
 ###
