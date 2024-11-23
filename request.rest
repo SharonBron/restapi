@@ -1,0 +1,69 @@
+# posts api
+
+# add a new post
+POST http://localhost:3000/api/post
+Content-Type: application/json
+
+{
+    "title": "My First Post",
+    "body": "This is my first post",
+    "sender": "User123"
+}
+
+###
+
+# get all posts
+GET http://localhost:3000/api/post
+
+###
+
+# get a post by ID
+GET http://localhost:3000/api/post/<POST_ID>
+
+###
+
+# get posts by sender
+GET http://localhost:3000/api/post/sender/post?sender=User123
+
+###
+
+# update a post
+PUT http://localhost:3000/post/<POST_ID>
+Content-Type: application/json
+
+{
+    "title": "Updated Post Title",
+    "body": "Updated content"
+}
+
+# comments api
+
+# add a new comment
+POST http://localhost:3000/api/comment
+Content-Type: application/json
+
+{
+    "body": "This is a comment",
+    "author": "User456",
+    "postId": "<POST_ID>"
+}
+
+###
+
+# get all comments for a post
+GET http://localhost:3000/api/comment/<POST_ID>
+
+###
+
+# update a comment
+PUT http://localhost:3000/api/comment/<COMMENT_ID>
+Content-Type: application/json
+
+{
+    "content": "Updated comment content"
+}
+
+###
+
+# delete a comment
+DELETE http://localhost:3000/api/comment/<COMMENT_ID>
