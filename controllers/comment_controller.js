@@ -1,11 +1,16 @@
 const Comment = require('../models/comment_model');
 
-// add a comment
+//add a comment
 exports.addComment = async (req, res) => {
-    const comment = new Comment(req.body);
-    await comment.save();
-    res.status(201).json(comment);
+    try {
+        const comment = new Comment(req.body);
+        await comment.save();
+        res.status(201).json(comment);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
 };
+
 
 // get all comments
 exports.getAllComments = async (req, res) => {

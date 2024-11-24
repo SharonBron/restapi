@@ -5,9 +5,9 @@ POST http://localhost:3000/api/post
 Content-Type: application/json
 
 {
-    "title": "My First Post",
-    "body": "This is my first post",
-    "sender": "User123"
+    "title": "Hello World",
+    "body": "Hi everyone",
+    "sender": "User234"
 }
 
 ###
@@ -18,7 +18,7 @@ GET http://localhost:3000/api/post
 ###
 
 # get a post by ID
-GET http://localhost:3000/api/post/<POST_ID>
+GET http://localhost:3000/api/post/6742fbd9520df4b4a871b223
 
 ###
 
@@ -28,14 +28,15 @@ GET http://localhost:3000/api/post/sender/post?sender=User123
 ###
 
 # update a post
-PUT http://localhost:3000/post/<POST_ID>
+PUT http://localhost:3000/api/post/6742fbd9520df4b4a871b223
 Content-Type: application/json
 
 {
-    "title": "Updated Post Title",
-    "body": "Updated content"
+    "title": "Updated post",
+    "body": "How are you"
 }
-
+###
+  
 # comments api
 
 # add a new comment
@@ -43,20 +44,20 @@ POST http://localhost:3000/api/comment
 Content-Type: application/json
 
 {
-    "body": "This is a comment",
-    "author": "User456",
-    "postId": "<POST_ID>"
+    "postId": "6742fbd9520df4b4a871b223",
+    "body": "This is a new comment",
+    "author": "User234"
 }
 
 ###
 
 # get all comments for a post
-GET http://localhost:3000/api/comment/<POST_ID>
+GET http://localhost:3000/api/comment/6742fbd9520df4b4a871b223
 
 ###
 
 # update a comment
-PUT http://localhost:3000/api/comment/<COMMENT_ID>
+PUT http://localhost:3000/api/comment/6742fc09520df4b4a871b229
 Content-Type: application/json
 
 {
@@ -66,4 +67,4 @@ Content-Type: application/json
 ###
 
 # delete a comment
-DELETE http://localhost:3000/api/comment/<COMMENT_ID>
+DELETE http://localhost:3000/api/comment/6742fc09520df4b4a871b229
